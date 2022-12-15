@@ -47,10 +47,10 @@ void list_insert_first(List *list, Item *i)
 bool list_empty(List *list)
 {
 	if(list->first==NULL){
-	return true;
+		return true;
 	}
 	else{
-	return false;
+		return false;
 	}
 }
  
@@ -65,10 +65,12 @@ unsigned list_count(List *list)
 	int counter=0;
 	while(42){
 		if(i->next==NULL){
-			return ++counter;}
+			return ++counter;
+			}
 		else{
 		i=i->next;
-		++counter;}
+		++counter;
+		}
 	}
 }
  
@@ -122,5 +124,5 @@ void list_dtor(List *list)
 			free(tmp);
 		}
 	}
-
+	free(list);
 }
