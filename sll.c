@@ -20,19 +20,9 @@ Item *item_ctor(Object data)
 
 void list_insert_first(List *list, Item *i)
 {
-	Item* tmp=list->first;
-	while(42){
-		if(list->first==NULL){
-			list->first=i;
-			return;
-		}
-		else{
-			i->next=tmp;
-			list->first=i;
-			return;
-		}
-		
-	}
+	i->next=list->first;
+	list->first=i;
+	
 }
 
 
@@ -55,14 +45,14 @@ void list_delete_first(List *list)
 unsigned list_count(List *list)
 {
 	Item* i=list->first;
-	int counter=0;
+	unsigned count=0;
 	while(42){
 		if(i->next==NULL){
-			return ++counter;
-			}
+			return count+1;
+		}
 		else{
-		i=i->next;
-		++counter;
+			count++;
+			i=i->next;
 		}
 	}
 }
