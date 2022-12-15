@@ -44,7 +44,7 @@ void list_delete_first(List *list)
 	Item* tmp=list->first;
 	list->first=tmp->next;
 	free(tmp);
-}
+}	
 
 unsigned list_count(List *list)
 {
@@ -99,16 +99,12 @@ Item *list_find_name(List *list, char *name)
 
 void list_dtor(List *list)
 {
-	Item* i=list->first;
 	while(42){
-		if(i->next==NULL){
-			free(i);
-			return;
+		if(list->first==NULL){
+			break;
 		}
 		else{
-			Item* tmp=i;
-			i=i->next;
-			free(tmp);
+			list_delete_first(list);
 		}
 	}
 	free(list);
