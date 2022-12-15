@@ -28,7 +28,6 @@ void list_insert_first(List *list, Item *i)
 }
 
 
-
 bool list_empty(List *list)
 {
 	if(list->first==NULL){
@@ -71,7 +70,7 @@ Item *list_find_minid(List *list)
 			return min;
 		}
 		else{
-			if(i->data.id<min->data.id){
+			if(i->data.id<=min->data.id){
 				min=i;
 			}
 			i=i->next;
