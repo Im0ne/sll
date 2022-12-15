@@ -14,7 +14,8 @@ Item *item_ctor(Object data)
 {
 	Item* tmp=malloc(sizeof(Item));
 	tmp->data=data;
-	return tmp;	
+	tmp->next=NULL;
+	return tmp;
 }
  
 
@@ -106,7 +107,6 @@ void list_dtor(List *list)
 		else{
 			Item* tmp=i;
 			i=i->next;
-			tmp->next=NULL;
 			free(tmp);
 		}
 	}
