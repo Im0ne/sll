@@ -39,7 +39,9 @@ bool list_empty(List *list)
  
 void list_delete_first(List *list)
 {
-	list->first=list->first->next;
+	Item* tmp=list->first;
+	list->first=tmp->next;
+	free(tmp);
 }
 
 unsigned list_count(List *list)
