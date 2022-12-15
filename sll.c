@@ -12,16 +12,9 @@ List list_ctor()
 
 Item *item_ctor(Object data)
 {
-	Item* tmp_ptr=malloc(sizeof(Item));
-	tmp_ptr->data.name=malloc(strlen(data.name));
-	tmp_ptr->data.id=data.id;
-	if(tmp_ptr->data.name==NULL){
-	free(tmp_ptr);
-	return NULL;
-	}
-	strcpy(tmp_ptr->data.name,data.name);
-	tmp_ptr->next=NULL;
-	return tmp_ptr;
+	Item* tmp=malloc(sizeof(Item));
+	tmp->data=data;
+	return tmp;	
 }
  
 
