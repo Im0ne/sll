@@ -6,7 +6,8 @@
 
 List list_ctor()
 {
-	List* tmp=malloc(sizeof(Item));
+	List* tmp=malloc(sizeof(List));
+	tmp->first=NULL;
 	return *tmp;
 }
 
