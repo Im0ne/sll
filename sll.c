@@ -106,6 +106,7 @@ void list_dtor(List *list)
 		else{
 			Item* tmp=i;
 			i=i->next;
+			tmp->next=NULL;
 			free(tmp);
 		}
 	}
