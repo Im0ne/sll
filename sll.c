@@ -107,5 +107,4 @@ void list_dtor(List *list)
 			list_delete_first(list);
 		}
 	}
-	free(list);	
 }
