@@ -44,6 +44,7 @@ void list_delete_first(List *list)
 	Item* tmp=list->first;
 	list->first=tmp->next;
 	free(tmp);
+	free(list->first);
 }	
 
 unsigned list_count(List *list)
@@ -107,5 +108,5 @@ void list_dtor(List *list)
 			list_delete_first(list);
 		}
 	}
-	free(list);
+	free(list);	
 }
