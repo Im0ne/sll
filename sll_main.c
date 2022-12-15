@@ -66,9 +66,9 @@ int main()
 	else
         printf("Polozka s daty %s nenalezena.\n",name);
  
-    printf("list_dtor...\n");
-    list_dtor(&list);
-    printf("Seznam prazdny: %s\n", list_empty(&list) ? "ano" : "ne");
+    // printf("list_dtor...\n");
+    // list_dtor(&list);
+    // printf("Seznam prazdny: %s\n", list_empty(&list) ? "ano" : "ne");
  
     return 0;
 }
