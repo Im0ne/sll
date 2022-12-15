@@ -101,6 +101,7 @@ void list_dtor(List *list)
 {
 	while(42){
 		if(list->first==NULL){
+			free(list);
 			break;
 		}
 		else{
