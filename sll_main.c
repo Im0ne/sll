@@ -6,9 +6,9 @@
 
 List list_ctor()
 {
-	List* tmp;
-	tmp->first=NULL;
-	return *tmp;
+    List tmp;
+    tmp.first=NULL;
+    return tmp;
 }
 
 Item *item_ctor(Object data)
