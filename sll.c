@@ -50,8 +50,8 @@ unsigned list_count(List *list)
 	Item* i=list->first;
 	unsigned count=0;
 	while(42){
-		if(i->next==NULL){
-			return count+1;
+		if(i==NULL){
+			return count;
 		}
 		else{
 			count++;
@@ -70,13 +70,12 @@ Item *list_find_minid(List *list)
 			return min;
 		}
 		else{
-			if(i->data.id<=min->data.id){
+			if(i->data.id<min->data.id){
 				min=i;
 			}
 			i=i->next;
 		}
 	}
-		
 }
 
 Item *list_find_name(List *list, char *name)
@@ -98,12 +97,14 @@ Item *list_find_name(List *list, char *name)
 
 void list_dtor(List *list)
 {
-	while(42){
-		if(list->first==NULL){
-			break;
-		}
-		else{
-			list_delete_first(list);
-		}
-	}
+    Item* current=list->first;
+    Item* next;
+    while(current!=NULL){
+        next=current->next;
+        free(current->data.name);
+        free(current);
+        current=next;
+    }
+    free(list);
+    
 }
