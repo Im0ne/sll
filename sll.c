@@ -92,4 +92,5 @@ void list_dtor(List *list)
 	while(list->first!=NULL){
 			list_delete_first(list);
 	}
+	free(list);
 }
