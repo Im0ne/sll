@@ -69,6 +69,6 @@ int main()
     printf("list_dtor...\n");
     list_dtor(&list);
     printf("Seznam prazdny: %s\n", list_empty(&list) ? "ano" : "ne");
-    free(item);
+
     return 0;
 }
