@@ -6,9 +6,9 @@
 
 List list_ctor()
 {
-	List* tmp=malloc(sizeof(List));
-	tmp->first=NULL;
-	return *tmp;
+    List tmp;
+    tmp.first=NULL;
+    return tmp;
 }
 
 Item *item_ctor(Object data)
@@ -90,7 +90,7 @@ Item *list_find_name(List *list, char *name)
 void list_dtor(List *list)
 {
 	while(list->first!=NULL){
-			list_delete_first(list);
+		list_delete_first(list);
 	}
-	free(list);
+	
 }
