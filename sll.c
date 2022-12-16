@@ -24,7 +24,7 @@ void list_insert_first(List *list, Item *i)
 {
 	i->next=list->first;
 	list->first=i;
-	free(i->next);
+
 }
 
 
