@@ -65,34 +65,26 @@ Item *list_find_minid(List *list)
 {
 	Item* i=list->first;
 	Item* min=i;
-	while(42){
-		if(i->next==NULL){
-			return min;
+	while(i->next!=NULL){
+		if(i->data.id<min->data.id){
+			min=i;
 		}
-		else{
-			if(i->data.id<min->data.id){
-				min=i;
-			}
-			i=i->next;
-		}
+		i=i->next;
 	}
+	return min;
 }
 
 Item *list_find_name(List *list, char *name)
 {
 	Item* i=list->first;
-	while(42){
-		if(i->next==NULL){
-			return NULL;
+	while(i->next==NULL){		
+		if(strcmp(i->data.name,name)==0){
+			return i;
 		}
-		else{
-			if(strcmp(i->data.name,name)==0){
-				return i;
-			}
-			i=i->next;
-		}
+		i=i->next;
+		
 	}
-	
+	return NULL;
 }
 
 void list_dtor(List *list)
@@ -100,5 +92,4 @@ void list_dtor(List *list)
 	while(list->first!=NULL){
 			list_delete_first(list);
 	}
-	free(list);
 }
