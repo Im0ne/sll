@@ -97,12 +97,7 @@ Item *list_find_name(List *list, char *name)
 
 void list_dtor(List *list)
 {
-	while(42){
-		if(list->first==NULL){
-			break;
-		}
-		else{
+	while(list->first!=NULL){
 			list_delete_first(list);
-		}
 	}
 }
