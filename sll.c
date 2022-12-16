@@ -42,7 +42,6 @@ void list_delete_first(List *list)
 {
 	Item* tmp=list->first;
 	list->first=tmp->next;
-	free(list->first);
 	free(tmp);
 }	
 
